@@ -10,7 +10,13 @@ const Home: FunctionComponent = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Pagination page={1} />
-      <div style={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(auto-fill, minmax(120px, 1fr))`,
+          gap: "8px",
+        }}
+      >
         {movies.length &&
           movies.map((item, key) => (
             <div key={key}>

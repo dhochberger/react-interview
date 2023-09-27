@@ -8,7 +8,7 @@ type Props = {
 
 const Pagination: FunctionComponent<Props> = ({ page = 1 }) => {
   return (
-    <div style={{ alignSelf: "end" }}>
+    <div style={{ width: "100%", textAlign: "center" }}>
       <select name="page">
         {[4, 8, 12].map((item, key) => (
           <option value={item}>{item}</option>
