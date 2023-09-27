@@ -1,0 +1,12 @@
+.movieCard {
+    border-radius: 8px;
+    border: 2px solid black;
+    width: 120px;
+    height: 150px;
+    background-color: white;
+}
+
+.movieCard:hover {
+    border-radius: 8px;
+    border: 2px solid cyan;
+}

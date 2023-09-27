@@ -1,0 +1,9 @@
+{
+    "typescript.suggestionActions.enabled": false,
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+}
