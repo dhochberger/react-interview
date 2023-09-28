@@ -1,7 +1,7 @@
 # Use a lighter version of Node as a parent image
 FROM node:alpine
 # Set the working directory to /client
-WORKDIR /src
+WORKDIR /
 # copy package.json into the container at /client
 COPY package.json .
 # install dependencies

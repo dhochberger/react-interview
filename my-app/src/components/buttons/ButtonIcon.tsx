@@ -1,18 +1,18 @@
-import { ReactNode } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
-type Props<T> = {
+type Props = {
   title?: string;
   icon: ReactNode;
   disabled?: boolean;
   onClick: () => void;
 };
 
-const ButtonIcon = <T,>({
+const ButtonIcon: FunctionComponent<Props> = ({
   title,
   icon,
   disabled,
   onClick,
-}: Props<T>): JSX.Element => {
+}) => {
   return (
     <button disabled={disabled} title={title} onClick={onClick}>
       {icon}
