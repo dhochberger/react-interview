@@ -1,0 +1,30 @@
+.bar-box {
+    padding: 2px
+}
+
+.bar-numbers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar-wrapper {
+    padding: 2px;
+    height: 4px;
+    display: flex;
+}
+
+.bar-likes {
+    background-color: green;
+              border-radius: 4px 0 0 4px;
+} 
+
+.bar-dislikes {
+    background-color: grey;
+              border-radius: 0 4px 4px 0;
+}
+
+.bar-icons {
+    display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+}

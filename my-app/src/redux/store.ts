@@ -1,12 +1,17 @@
-import thunkMiddleware from "redux-thunk";
-import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
+import {
+  applyMiddleware,
+  combineReducers,
+  configureStore,
+} from "@reduxjs/toolkit";
 import logger from "redux-logger";
+import thunkMiddleware from "redux-thunk";
+import filtersReducer from "./filtersRedux";
 import moviesReducer from "./moviesRedux";
 
 const composedEnhancer = applyMiddleware(thunkMiddleware);
 
 const store = configureStore({
-  reducer: moviesReducer,
+  reducer: combineReducers({ movies: moviesReducer, filters: filtersReducer }),
   middleware: [logger],
   enhancers: [composedEnhancer],
 });

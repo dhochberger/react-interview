@@ -4,4 +4,6 @@ export type Movie = {
   category: string;
   likes: number;
   dislikes: number;
+  liked?: boolean;
+  disliked?: boolean;
 };

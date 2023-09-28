@@ -1,44 +1,39 @@
 import { FunctionComponent } from "react";
+import { useAppDispatch } from "../hooks/ReduxHooks";
 import { Movie } from "../types/MovieType";
-import { ThumbsDown, ThumbsUp } from "./icons/Thumb";
+import LikeBar from "./LikeBar";
+import ButtonIcon from "./buttons/ButtonIcon";
+import { Delete } from "./icons/Delete";
 import "./styles/moviecard.css";
 
 type Props = {
   movie: Movie;
 };
 
-const MovieCard: FunctionComponent<Props> = ({ movie }) => (
-  <div>
-    <div className="movieCard">
-      <div
-        style={{
-          display: "flex",
-          height: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        {movie.title}
+const MovieCard: FunctionComponent<Props> = ({ movie }) => {
+  const dispatch = useAppDispatch();
+
+  const handleDeleteMovie = () =>
+    dispatch({ type: "movies/removeMovie", payload: movie.id });
+
+  return (
+    <div className="movie-card">
+      <div className="movie-card-body">
+        <div className="movie-card-delete">
+          <ButtonIcon
+            title="delete"
+            icon={<Delete />}
+            onClick={handleDeleteMovie}
+          />
+        </div>
+        <div className="movie-card-infos">
+          <b>{movie.title}</b>
+          {movie.category}
+        </div>
+        <LikeBar movie={movie} />
       </div>
     </div>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-around",
-      }}
-    >
-      <div>
-        <ThumbsUp />
-        {movie.likes}
-      </div>
-      <div>
-        <ThumbsDown />
-        {movie.dislikes}
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default MovieCard;

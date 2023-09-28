@@ -1,12 +1,35 @@
-.movieCard {
+.movie-card {
     border-radius: 8px;
     border: 2px solid black;
-    width: 120px;
-    height: 150px;
+    height: 100%;
     background-color: white;
+    min-height: 150px;
+    width: 100%
 }
 
-.movieCard:hover {
+.movie-card:hover {
     border-radius: 8px;
     border: 2px solid cyan;
+}
+
+.movie-card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    padding: 0 8px
+}
+
+.movie-card-delete {
+    display: flex;
+    padding: 8px 8px 0 8px;
+    justify-content: flex-end;
+}
+
+.movie-card-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }

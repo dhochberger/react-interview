@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 
 const App: FunctionComponent = () => {
   return (
-    <div style={{ height: "100vh", backgroundColor: "grey" }}>
+    <div className="main-app">
       <Home />
     </div>
   );
